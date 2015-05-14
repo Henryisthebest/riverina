@@ -1,0 +1,11 @@
+{
+    "com.onesignal.plugins.OneSignal": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/one-signal/OneSignal-Cordova-SDK",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
