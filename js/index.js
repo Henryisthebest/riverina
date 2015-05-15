@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
- 
 var app = {
     // Application Constructor
     initialize: function() {
@@ -47,26 +46,13 @@ var app = {
 
         console.log('Received Event: ' + id);
         
-        // Enable to debug issues.
-        // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
-
-        window.plugins.OneSignal.init( "5eb5a37e-b458-11e3-ac11-000c2940e62c",
-                                        {googleProjectNumber: "703322744261"},
-                                        app.didReceiveRemoteNotificationCallBack);
-    },
-    didReceiveRemoteNotificationCallBack : function(jsonData) {
-        alert("Notification received:\n" + JSON.stringify(jsonData));
-        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+        var notificationOpenedCallback = function(jsonData) {
+            alert("Notification received:\n" + JSON.stringify(jsonData));
+            console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+        };
+        
+        window.plugins.OneSignal.init("e44d9094-facc-11e4-9c72-0b1868647d30",
+                                      {googleProjectNumber: ""},
+                                      notificationOpenedCallback);
     }
 };
-
-function sendTag() {
-    window.plugins.OneSignal.sendTag("PhoneGapKey", "PhoneGapValue");
-}
-function getIds() {
-    window.plugins.OneSignal.getIds(function(ids) {
-        document.getElementById("OneSignalUserId").innerHTML = "UserId: " + ids.userId;
-        document.getElementById("OneSignalPushToken").innerHTML = "PushToken: " + ids.pushToken;
-        console.log('getIds: ' + JSON.stringify(ids));
-    });
-}
