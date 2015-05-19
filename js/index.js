@@ -45,14 +45,16 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        
+        alert('about to create notification callback');
         var notificationOpenedCallback = function(jsonData) {
             alert("Notification received:\n" + JSON.stringify(jsonData));
             console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
         };
         
+        alert('initing onesignal');
         window.plugins.OneSignal.init("e44d9094-facc-11e4-9c72-0b1868647d30",
                                       {googleProjectNumber: ""},
                                       notificationOpenedCallback);
+        alert('done initing onesignal');
     }
 };
