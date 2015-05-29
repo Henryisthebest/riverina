@@ -53,7 +53,7 @@ var app = {
         
         alert('initing onesignal');
         window.plugins.OneSignal.init("e44d9094-facc-11e4-9c72-0b1868647d30",
-                                      {googleProjectNumber: ""},
+                                      {googleProjectNumber: "684736564347"},
                                       notificationOpenedCallback);
         alert('done initing onesignal');
     }
