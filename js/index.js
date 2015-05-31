@@ -56,5 +56,7 @@ var app = {
                                       {googleProjectNumber: "684736564347"},
                                       notificationOpenedCallback);
         alert('done initing onesignal');
+        window.plugins.OneSignal.sendTag({mtype1:'yes', mtype2:'yes'});
+        alert('done adding two tags');
     }
 };
