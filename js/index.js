@@ -72,11 +72,11 @@ var app = {
             alert('tag list is now' + JSON.stringify(obj));
             
         });
-        
+        alert('deleting key');
         window.plugins.OneSignal.deleteTag("key");
-        
+        alert('delete mtpe3');
         window.plugins.OneSignal.deleteTag("mtype3");
-        
+        alert('deleted');
         window.plugins.OneSignal.getTags(function(obj) {
             alert('tag list is now final' + JSON.stringify(obj));
             
