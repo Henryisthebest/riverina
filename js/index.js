@@ -64,15 +64,18 @@ var app = {
     
         console.log("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
-            alert('obj is' + obj)
+            alert('obj is' + obj);
             if (obj.tags.indexOf(new_tag) == -1) {
-                console.log("Valid tag: " + new_tag)
-                obj.tags = obj.tags.concat([new_tag, 'yes'])
-                console.log('obj.tags is' + obj.tags)
+                alert("Valid tag: " + new_tag);
+                obj.tags = obj.tags.concat([new_tag, 'yes']);
+                alert('obj.tags is' + obj.tags);
                 window.plugins.OneSignal.getTags.setTags(obj.tags, function() {
                     $('#tags').prepend("<p>" + new_tag + "<input type='button' class='removeTagButton' value='Remove' /></p>");
                     $("#addTagField").val('')
-                })
+                });
+                alert('x');
+                alert('setTags executed succsefully' + $('#tags').value );
+                
             }
         })
     }
