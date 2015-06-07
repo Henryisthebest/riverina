@@ -72,5 +72,14 @@ var app = {
             alert('tag list is now' + JSON.stringify(obj));
             
         });
+        
+        window.plugins.OneSignal.deleteTag("key");
+        
+        window.plugins.OneSignal.deleteTag("mtype3");
+        
+        window.plugins.OneSignal.getTags(function(obj) {
+            alert('tag list is now final' + JSON.stringify(obj));
+            
+        });
     }
 };
