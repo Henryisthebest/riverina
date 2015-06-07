@@ -67,9 +67,9 @@ var app = {
             alert('Tags Received: ' + (obj) + obj.indexOf({new_tag, 'yes'}));
             if (obj.indexOf({new_tag, 'yes'}) == -1) {
                 alert("Valid tag: " + new_tag)
-                obj.tags = obj.tags.concat([new_tag, 'yes']);
-                alert('obj.tags is' + obj.tags);
-                window.plugins.OneSignal.getTags.sendTags(obj.tags, function() {
+                obj = obj.concat([new_tag, 'yes']);
+                alert('obj.tags is' + obj);
+                window.plugins.OneSignal.getTags.sendTags(obj, function() {
                     $('#tags').prepend("<p>" + new_tag + "<input type='button' class='removeTagButton' value='Remove' /></p>");
                     $("#addTagField").val('')
                 });
