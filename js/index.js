@@ -62,7 +62,7 @@ var app = {
         var new_tag = String('mtype3');
         //console.log("object is : " + push)
     
-        console.log("Adding new tag: " + new_tag)
+        alert("Adding new tag: " + new_tag)
         
     }
 };
