@@ -65,7 +65,7 @@ var app = {
         alert("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
             alert('stuff happened' + JSON.stringify(obj));
-            window.plugins.OneSignal.sendTag({new_tag: "yes"});
+            window.plugins.OneSignal.sendTag(new_tag, 'yes');
             
         });
          window.plugins.OneSignal.getTags(function(obj) {
