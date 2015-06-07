@@ -64,7 +64,7 @@ var app = {
     
         alert("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
-            alert('Tags Received: ' + JSON.stringify(obj));
+            alert('Tags Received: ' + (obj));
             if (obj.tags.indexOf({new_tag, 'yes'}) == -1) {
                 alert("Valid tag: " + new_tag)
                 obj.tags = obj.tags.concat([new_tag, 'yes']);
