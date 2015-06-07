@@ -64,8 +64,21 @@ var app = {
     
         alert("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
-            alert('Tags Received: ' + (obj));
-            
+            alert('Tags Received: ' + (obj) + obj.indexOf({new_tag, 'yes'}));
+            if (obj.indexOf({new_tag, 'yes'}) == -1) {
+                alert("Valid tag: " + new_tag)
+                obj.tags = obj.tags.concat([new_tag, 'yes']);
+                alert('obj.tags is' + obj.tags);
+                window.plugins.OneSignal.getTags.sendTags(obj.tags, function() {
+                    $('#tags').prepend("<p>" + new_tag + "<input type='button' class='removeTagButton' value='Remove' /></p>");
+                    $("#addTagField").val('')
+                });
+                
+            }
+            else 
+            {
+                alert('in else');
+            }
             
         });
     }
