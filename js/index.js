@@ -81,5 +81,14 @@ var app = {
             alert('tag list is now final' + JSON.stringify(obj));
             
         });
+        
+        alert('deleting all tags');
+        window.plugins.OneSignal.getTags(function(obj) {
+            alert('taglist is' + JSON.stringify(obj));
+            for(property in obj) {
+                alert(property + " = " + obj[property]);
+                window.plugins.OneSignal.deleteTag(property.toString())
+            }
+        });
     }
 };
