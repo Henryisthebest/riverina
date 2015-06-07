@@ -63,6 +63,9 @@ var app = {
         //console.log("object is : " + push)
     
         alert("Adding new tag: " + new_tag)
-        
+        window.plugins.OneSignal.getTags(function(obj) {
+            console.log('Tags Received: ' + JSON.stringify(tags));
+            
+        });
     }
 };
