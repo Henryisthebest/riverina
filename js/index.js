@@ -66,17 +66,15 @@ var app = {
         window.plugins.OneSignal.getTags(function(obj) {
             console.log('Tags Received: ' + JSON.stringify(tags));
             if (obj.tags.indexOf({new_tag, 'yes'}) == -1) {
-                alert("Valid tag: " + new_tag);
+                alert("Valid tag: " + new_tag)
                 obj.tags = obj.tags.concat([new_tag, 'yes']);
                 alert('obj.tags is' + obj.tags);
                 window.plugins.OneSignal.getTags.setTags(obj.tags, function() {
                     $('#tags').prepend("<p>" + new_tag + "<input type='button' class='removeTagButton' value='Remove' /></p>");
                     $("#addTagField").val('')
                 });
-                alert('x');
-                alert('setTags executed succsefully' + $('#tags').value );
                 
             }
-        }
+        });
     }
 };
