@@ -77,6 +77,6 @@ var app = {
                 alert('setTags executed succsefully' + $('#tags').value );
                 
             }
-        })
+        }
     }
 };
