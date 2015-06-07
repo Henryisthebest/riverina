@@ -66,7 +66,7 @@ var app = {
         window.plugins.OneSignal.getTags(function(obj) {
             alert('stuff happened old tags' + JSON.stringify(obj));
             window.plugins.OneSignal.sendTag('mtype3', 'yes');
-            alert('set tag done')''
+            alert('set tag done');
         });
          window.plugins.OneSignal.getTags(function(obj) {
             alert('tag list is now' + JSON.stringify(obj));
