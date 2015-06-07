@@ -64,8 +64,7 @@ var app = {
     
         alert("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
-            alert('Tags Received: ' + (obj) + obj.indexOf({new_tag, 'yes'}));
-           
+            alert('stuff happened');
             
         });
     }
