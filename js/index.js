@@ -75,6 +75,10 @@ var app = {
                 });
                 
             }
+            else 
+            {
+                alert('in else');
+            }
             
         });
     }
