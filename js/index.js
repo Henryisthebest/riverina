@@ -64,12 +64,12 @@ var app = {
     
         alert("Adding new tag: " + new_tag)
         window.plugins.OneSignal.getTags(function(obj) {
-            alert('stuff happened' + JSON.stringify(obj));
-            window.plugins.OneSignal.sendTag(new_tag, 'yes');
-            
+            alert('stuff happened old tags' + JSON.stringify(obj));
+            window.plugins.OneSignal.sendTag('mtype3', 'yes');
+            alert('set tag done')''
         });
          window.plugins.OneSignal.getTags(function(obj) {
-            alert('stuff happened' + JSON.stringify(obj));
+            alert('tag list is now' + JSON.stringify(obj));
             
         });
     }
